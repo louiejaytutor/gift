@@ -8,7 +8,7 @@ const flower = document.getElementById("flower");
 
 boxCover.addEventListener("click", function() {
     if (boxCover.classList.contains("open")) {
-        label.innerHTML = "Are you tired? I have a gift for you";
+        label.innerHTML = "Are you tired love? I have a gift for you";
 
         character.classList.add("first");
         character.classList.remove("third");
