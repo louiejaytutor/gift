@@ -1,0 +1,248 @@
+:root {
+    --color-1: #ffb6c1;
+    --color-2: #ffd1dc;
+    --color-3: #ffe4e1;
+    --color-4: #fff0f5;
+    --color-5: #faebd7;
+}
+
+* {
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: var(--color-4);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 640px;
+    zoom: 75%;
+}
+
+.container img {
+    position: absolute;
+}
+
+.label {
+    position: absolute;
+    color: #436EBD;
+    font-size: 50px;
+    font-weight: bold;
+    top: 0;
+    text-align: center;
+}
+
+.background {
+    position: absolute;
+    height: 120px;
+    width: 350px;
+    margin-top: 450px;
+    z-index: 2;
+    background-color: var(--color-4);
+}
+
+
+/* Box */
+.box-cover {
+    margin-top: 10px;
+    z-index: 5;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.box-cover:hover {
+    transition: all 0.25s ease-in-out 0.5s;
+    transform: scale(1.05);
+}
+
+.box-cover.open {
+    transform: translateX(-230px) translateY(50px) rotate(-90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.box-cover.open:hover {
+    transition: all 0.25s ease-in-out;
+    transform: translateX(-230px) translateY(50px) rotate(-90deg) scale(1.05);
+}
+
+.box-1 {
+    margin-top: 238px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.box-2 {
+    margin-top: 73px;
+    z-index: 1;
+}
+
+
+/* Character */
+.character {
+    height: 310px;
+    width: 280px;
+    z-index: 2;
+    margin-top: 250px;
+    transition: all 0.5s ease-in-out;
+}
+
+.character.visible {
+    margin-top: 0;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.character.visible:hover {
+    transition: all 0.25s ease-in-out;
+    transform: scale(1.05);
+}
+
+.character .hand {
+    position: absolute;
+    z-index: 3;
+}
+
+.character .flower {
+    position: absolute;
+    margin-left: 285px;
+    margin-top: 40px;
+    z-index: 3;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.character .flower.show {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out 0.8s;
+}
+
+.character.first .hand:nth-child(2) {
+    margin-top: 110px;
+    margin-left: 55px;
+    transform: rotate(205deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.character.first .hand:nth-child(3) {
+    margin-top: 110px;
+    margin-left: 175px;
+    transform: rotate(-125deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.character.first.visible .hand:nth-child(2) {
+    margin-top: 100px;
+    margin-left: -15px;
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.character.first.visible .hand:nth-child(3) {
+    margin-top: 100px;
+    margin-left: 225px;
+    transform: rotate(90deg);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.character.second .hand:nth-child(2) {
+    margin-top: 110px;
+    margin-left: 55px;
+    transform: rotate(90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.character.second .hand:nth-child(3) {
+    margin-top: 110px;
+    margin-left: 175px;
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.character.third.visible .hand:nth-child(2) {
+    margin-top: 110px;
+    margin-left: 55px;
+    transform: rotate(205deg);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.character.third.visible .hand:nth-child(3) {
+    margin-top: 100px;
+    margin-left: 240px;
+    transform: rotate(120deg);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 2;
+    transition: all 0.5s ease-in-out 0.5s;
+    pointer-events: none;
+}
+
+.confetti.show {
+    pointer-events: none;
+}
+
+.confetti.show img {
+    opacity: 0;
+    transition: all 1.5s ease-in-out 0.5s;
+}
+
+.confetti.show img:nth-child(1) {
+    transform: translateX(-250px) translateY(-300px) rotate(-50deg);
+}
+
+.confetti.show img:nth-child(2) {
+    transform: translateX(-400px) translateY(-200px) rotate(30deg);
+}
+
+.confetti.show img:nth-child(3) {
+    transform: translateX(-300px) translateY(-100px) rotate(120deg);
+}
+
+.confetti.show img:nth-child(4) {
+    transform: translateX(300px) translateY(-250px) rotate(162deg);
+}
+
+.confetti.show img:nth-child(5) {
+    transform: translateX(261px) translateY(-104px) rotate(38deg);
+}
+
+.confetti.show img:nth-child(6) {
+    transform: translateX(102px) translateY(-350px) rotate(360deg);
+}
+
+
+/* Heart */
+.heart {
+    position: absolute;
+    margin-top: 300px;
+    z-index: 2;
+    opacity: 1;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.heart.show {
+    opacity: 0;
+    transition: all 2s ease;
+    transform: scale(1) translateX(150px) translateY(-300px);
+}
